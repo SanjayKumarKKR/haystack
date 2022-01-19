@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     image: "deepset/haystack-cpu:0.10.0"
+    dns:
+      - 8.8.8.8
+      - 4.4.4.4
     # Mount custom Pipeline YAML and custom Components.
     # volumes:
     #   - ./rest_api/pipeline:/home/user/rest_api/pipeline

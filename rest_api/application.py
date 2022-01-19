@@ -3,17 +3,12 @@ from haystack.question_generator import QuestionGenerator
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional
-from pydantic import BaseModel
-from fastapi import File, UploadFile
-import aiofiles
 import uvicorn
 from haystack.file_converter import ImageToTextConverter
 from haystack.document_stores import ElasticsearchDocumentStore
 from haystack.nodes import EmbeddingRetriever
 import pandas as pd
-import requests
 import os
-import urllib.request
 from haystack.pipelines import FAQPipeline
 from haystack.nodes import ElasticsearchRetriever
 from haystack.utils import clean_wiki_text, convert_files_to_dicts
@@ -21,7 +16,6 @@ from haystack.nodes import FARMReader
 from haystack.pipelines import ExtractiveQAPipeline
 import s3fs
 import boto3
-import fitz
 
 logging.basicConfig(format="%(asctime)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p")
 logger = logging.getLogger(__name__)

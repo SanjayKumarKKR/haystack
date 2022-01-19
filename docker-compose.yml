@@ -24,10 +24,10 @@ services:
     command: "/bin/bash -c 'sleep 10 && gunicorn rest_api.application:app -b 0.0.0.0 -k uvicorn.workers.UvicornWorker --workers 8 --timeout 180'"
   elasticsearch:
     # This will start an empty elasticsearch instance (so you have to add your documents yourself)
-    #image: "elasticsearch:7.9.2"
+    image: "elasticsearch:7.9.2"
     # If you want a demo image instead that is "ready-to-query" with some indexed articles
     # about countries and capital cities from Wikipedia:
-    image: "deepset/elasticsearch-countries-and-capitals"
+    #image: "deepset/elasticsearch-countries-and-capitals"
     ports:
       - 9200:9200
     restart: on-failure

@@ -6,8 +6,6 @@ from typing import List, Optional
 from pydantic import BaseModel
 from fastapi import File, UploadFile
 import aiofiles
-import nest_asyncio
-from pyngrok import ngrok
 import uvicorn
 from haystack.file_converter import ImageToTextConverter
 from haystack.document_stores import ElasticsearchDocumentStore
